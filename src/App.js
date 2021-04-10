@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { getAllBeers, getBeer, getRandomBeer } from './BeerAPI';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+
+  componentDidMount() {
+    
+    // Get 1 beer
+    getBeer('5fb6a86265b9c209606e10e2').then(data => console.log(data));
+
+    // Get all beers
+    getAllBeers().then(data => console.log(data))
+
+    // Get a random beer
+    getRandomBeer().then(data => console.log(data))
+  }
+
+  render() {
+    return (
+      <div></div>
+    )
+  }
 }
-
-export default App;
