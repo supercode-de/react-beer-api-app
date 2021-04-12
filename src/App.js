@@ -1,30 +1,28 @@
-import './App.css';
-import { getAllBeers, getBeer, getRandomBeer } from './BeerAPI';
-import { Component } from 'react';
+import { Switch, Route, Link, useLocation } from 'react-router-dom';
+import Detail from './components/Detail';
+import All from './components/All';
+import Nav from './components/Nav';
+import Home from './components/Home';
 
+const App = () => {
+ 
+  const location = useLocation();
 
-export default class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      beers: []
-    }
-  }
-
-  componentDidMount() {
-
-    // Get 1 beer
-    getBeer('5fb6a86265b9c209606e10e2').then(data => console.log(data));
-
-    // Get all beers
-    getAllBeers().then(data => this.setState({beers: data}));
-
-    // Get a random beer
-    getRandomBeer().then(data => console.log(data))
-  }
-
-  render() {
-    return (<ul>{ this.state.beers.map((beer, index) => <li key={index}>{ beer.name }</li>) }</ul>)
-  }
+  return ( 
+    <div className="app">
+      <main>
+        <Switch>
+          <Route path="/beer/random"><Detail /></Route>
+          <Route path="/beer/:id"><Detail /></Route>
+          <Route path="/beer/"><All /></Route>
+          <Route path="/"><Home /></Route>
+        </Switch>
+      </main>
+      <footer>
+        { location.pathname !== '/' && <Nav /> }
+      </footer>
+    </div>
+   );
 }
+
+export default App;

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto Slab', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+$primary-color: #FFCA41;
+$dark-color: #333333;
+
+.app {
+  max-width: 414px;
+}
+
+main {
+  padding: 30px 20px;
+}
+
+.home {
+  a {
+    img {
+      width: 100%;
+      display: block;
+    }
+    
+    span {
+      background-color: $primary-color;
+      display: block;
+      padding: 8px 15px;
+      font-size: 28px;
+      font-weight: bold;;
+    }
+  }
+
+  p {
+    margin-bottom: 45px;
+  }
+}
+
+nav {
+  display: block;
+  padding: 10px 0;
+  background-color: $primary-color;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid grey;
+  padding: 40px 0;
+  &:last-child {
+    border-bottom: none;
+  }
+  .img-holder {
+    width: 25%;
+    img {
+      width: 100%;
+    }
+  }
+  .content {
+    padding-left: 20px;
+    width: 75%;
+    .by {
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+h2 {
+  margin-bottom: 5px;
+  color: #333333;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 19px;
+  margin-top: 0;
+  color: $primary-color;
+}
+
+.btn {
+  background-color: $primary-color;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 25px;
+  border-radius: 35px;
+}
+
+.detail {
+  img {
+    height: 350px;
+    margin: auto;
+    display: block;
+    margin-bottom: 35px;
+  }
+  p {
+    font-weight: bold;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(168, 168, 168);
+    > * {
+      width: 50%;
+    }
+    > :nth-child(even) {
+      text-align: right;
+    }
+  }
+}
+
+.back-btn {
+  height: 45px;
+  width: 45px;
+
+  margin: 25px 0 15px;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
