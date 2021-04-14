@@ -22,7 +22,7 @@ const Detail = () => {
 
     return (
         <div className="detail">
-            <img src={image_url}></img>
+            <img src={image_url} alt={name}></img>
             <h2>{name}</h2>
             <h4>{tagline}</h4>
             <div className="meta">
