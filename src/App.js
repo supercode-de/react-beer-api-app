@@ -1,4 +1,4 @@
-import { Switch, Route, Link, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Detail from './components/Detail';
 import All from './components/All';
 import Nav from './components/Nav';

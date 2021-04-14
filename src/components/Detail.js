@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { getBeer } from "../BeerAPI";
 import Back from "./Back";
 
 const Detail = () => {
    
     const { id } = useParams();
-    const [beer, setBeer] = useState({})
+    const [beer, setBeer] = useState(null)
     const path = id ? id : 'random';
 
     useEffect(() => getBeer(path).then(response => setBeer(response)), [path]);
 
-    if (!beer) return (<>Loading</>);
+    if (!beer) return (<>Loading...</>);
 
     const { name, tagline, description, image_url, first_brewed, attenuation_level } = beer;
 

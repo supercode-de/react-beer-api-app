@@ -20,10 +20,7 @@ export default class All extends Component {
     }
 
     render() {
-        return (
-            <div>
-                { this.state.beers.map((beer, i) => <Card key={i} data={beer} />)}
-            </div>
-        )
+        if (!this.state.beers.length) return <p>Loading...</p>;
+        return <div>{ this.state.beers.map((beer, i) => <Card key={i} data={beer} />)}</div>;
     }
 }
