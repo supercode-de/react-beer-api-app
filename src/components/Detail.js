@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getBeer } from "../BeerAPI";
+import { getBeer, getRandomBeer } from "../BeerAPI";
 import Back from "./Back";
 
 const Detail = () => {
    
     const { id } = useParams();
-    const [beer, setBeer] = useState(null)
-    const path = id ? id : 'random';
+    const [beer, setBeer] = useState();
 
-    useEffect(() => getBeer(path).then(response => setBeer(response)), [path]);
+    useEffect(() => {
+        if (id) {
+            getBeer(id).then(response => setBeer(response))
+        } else {
+            getRandomBeer().then(response => setBeer(response))
+        }
+    }, [id]);
 
     if (!beer) return (<>Loading...</>);
 
