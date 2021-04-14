@@ -134,3 +134,13 @@ h4 {
     height: auto;
   }
 }
+
+body {
+  padding-bottom: 80px;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

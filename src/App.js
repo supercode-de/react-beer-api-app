@@ -18,9 +18,7 @@ const App = () => {
           <Route path="/"><Home /></Route>
         </Switch>
       </main>
-      <footer>
-        { location.pathname !== '/' && <Nav /> }
-      </footer>
+      { location.pathname !== '/' && <Nav /> }
     </div>
    );
 }
